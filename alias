@@ -1,6 +1,8 @@
 #!/bin/bash
 #
 
+alias reload='source ~/.bashrc'
+
 # set apt aliases
 alias apts='apt-cache search'
 alias aptshow='apt-cache show'
@@ -21,9 +23,10 @@ alias ah='atom .'
 alias apmup='apm update --no-confirm'
 
 # List directory contents
-alias la='ls -AF'       # Compact view, show hidden
+# alias la='ls -AF'       # Compact view, show hidden
+alias l='ls'
 alias ll='ls -al'
-alias l='ls -GFha'
+alias la='ls -GFha'
 alias l1='ls -1'
 
 alias _="sudo"
