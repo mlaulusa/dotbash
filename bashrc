@@ -23,6 +23,10 @@ set_prompt (){
 	IPurple='\e[0;95m'      # Purple
 	ICyan='\e[0;96m'        # Cyan
 	IWhite='\e[0;97m'       # White
+	
+	parse_git_branch() {
+		git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
+	}
 
 	if [[ $Last_Command == 0  ]]
 	then
@@ -34,7 +38,7 @@ set_prompt (){
 	if [[ $EUID == 0  ]]; then
 		PS1+="$Red\\h \d \@ [\u]-[\h] ❯ [\w]\n  ➝  "
 	else
-		PS1+="$IPurple\d \@ $Reset[$bldcyn\u$Reset]-[$IBlue\h$Reset] ❯ [$Green\w$Reset]\n  ➝  "
+		PS1+="$IPurple\d \@ $Reset[$bldcyn\u$Reset]-[$IBlue\h$Reset] ❯ [$Green\w$Reset] $IYellow\$(parse_git_branch)$Reset\n ➝  "
 	fi
 }
 PROMPT_COMMAND='set_prompt'
