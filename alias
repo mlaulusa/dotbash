@@ -89,7 +89,7 @@ catt() {
 }
 # Aliases
 alias gcl='git clone'
-alias ga='git add'
+alias ga='git add -p'
 alias gall='git add -A'
 alias gf='git fetch --all --prune --verbose'
 alias gft='git fetch --all --prune --tags --verbose'
