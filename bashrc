@@ -36,9 +36,9 @@ set_prompt (){
 	fi
 
 	if [[ $EUID == 0  ]]; then
-		PS1+="$Red\\h \d \@ [\u]-[\h] ❯ [\w]\n  ➝  "
+		PS1+="$Red [\u]-[\h] ❯ [\w] [\j]\n  ➝  "
 	else
-		PS1+="$IPurple\d \@ $Reset[$bldcyn\u$Reset]-[$IBlue\h$Reset] ❯ [$Green\w$Reset] $IYellow\$(parse_git_branch)$Reset\n ➝  "
+		PS1+="$Reset[$bldcyn\u$Reset]-[$IBlue\h$Reset] ❯ [$Green\w$Reset] [$IPurple\j$Reset] $IYellow\$(parse_git_branch)$Reset\n ➝  "
 	fi
 }
 PROMPT_COMMAND='set_prompt'
