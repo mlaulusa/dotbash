@@ -45,6 +45,8 @@ PROMPT_COMMAND='set_prompt'
 
 source ~/.bash/alias
 
+test -f ~/.bash/.git-completion.bash && . $_
+
 export CLICOLOR=1
 export LSCOLORS=ExFxBxDxCxegedabagacad
 alias ls="ls -GFh"
